@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import emailjs from "@emailjs/browser"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -42,15 +43,20 @@ export function Contact() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          message: values.message,
+          name: values.email,
+          title: "Freelance Inquiry",
         },
-        body: JSON.stringify(values),
-      })
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
 
-      if (!response.ok) {
+      if (result.status !== 200) {
         throw new Error("Failed to send message")
       }
 
