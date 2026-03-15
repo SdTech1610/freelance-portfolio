@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -98,10 +99,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
+        <meta name="google-site-verification" content="H--DFpR3lw7lYr7p2p3-owXffs5AX5BSr0euVAzEj_E" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-QJQNJTBJPR"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QJQNJTBJPR');
+        `}
+      </Script>
       </head>
       <body
         className={cn(
