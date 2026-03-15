@@ -10,7 +10,9 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
+  basePath: "/freelance-portfolio",
+  assetPrefix: "/freelance-portfolio/",
 };
 
 export default nextConfig;
