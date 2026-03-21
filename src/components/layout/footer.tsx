@@ -66,10 +66,6 @@ export function Footer() {
                 <span>sdtech1610@gmail.com</span>
               </li>
               <li className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <Phone className="h-5 w-5 text-primary" />
-                <span>+91 7984230684</span>
-              </li>
-              <li className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="h-5 w-5 text-primary" />
                 <span>Remote, India</span>
               </li>
