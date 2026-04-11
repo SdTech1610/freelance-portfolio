@@ -10,55 +10,55 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
 const projectData = [
-  {
-    id: 1,
-    title: "EcoSmart E-commerce",
-    description: "A full-stack e-commerce platform with Stripe integration and user dashboard.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-    category: "Full Stack",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-    github: "https://github.com",
-    live: "https://demo.com"
+    {
+    "id": 1,
+    "title": "Developer Portfolio Website",
+    "description": "A modern and responsive developer portfolio built with Next.js, featuring smooth animations, dark/light mode, project showcases, and a clean UI for personal branding.",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+    "category": "Frontend",
+    "tech": ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    "github": "",
+    "live": "https://www.sdtechword.in"
   },
   {
-    id: 2,
-    title: "DevPortfolio Template",
-    description: "Modern, minimal developer portfolio with glassmorphism and Framer Motion.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
-    category: "Frontend",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com",
-    live: "https://demo.com"
+    "id": 2,
+    "title": "Blog Website with CMS",
+    "description": "A modern blog platform built with Astro for the frontend and Decap CMS for content management. Features a clean UI, markdown-based posts, admin panel for managing blogs, and fast static site generation.",
+    "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800",
+    "category": "Full Stack",
+    "tech": ["Astro", "HTML", "CSS", "JavaScript", "Decap CMS"],
+    "github": "",
+    "live": "https://blog.sdtechworld.in"
   },
   {
-    id: 3,
-    title: "Crypto Dashboard",
-    description: "Real-time cryptocurrency tracking dashboard with interactive charts and API integration.",
-    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800",
-    category: "Frontend",
-    tech: ["React", "Next.js", "Chart.js"],
-    github: "https://github.com",
-    live: "https://demo.com"
+  "id": 3,
+  "title": "Online Cake Shop Website",
+  "description": "An e-commerce platform for a cake shop with features like product catalog, online ordering, user authentication, cart management, order tracking, and admin dashboard for managing products and orders.",
+  "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800",
+  "category": "Frontend",
+  "tech": ["HTML", "CSS", "JS", "SEO"],
+  "github": "",
+  "live": "https://parshwacakes.netlify.app/"
   },
   {
-    id: 4,
-    title: "API Gateway Service",
-    description: "High-performance microservice for managing and routing API requests.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    category: "Backend",
-    tech: ["Golang", "Docker", "Redis", "gRPC"],
-    github: "https://github.com",
-    live: "https://demo.com"
+  "id": 4,
+  "title": "Software Engineering & Payment System Integration",
+  "description": "Delivered end-to-end software engineering consulting focused on improving accessibility and responsiveness across web and mobile platforms. Collaborated closely with stakeholders to ensure compliance with international usability standards and optimized user experience. Designed and implemented scalable and secure payment systems, from initial setup to advanced configurations, enabling seamless and reliable transactions.",
+  "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+  "category": "Full Stack",
+  "tech": ["Web Accessibility", "Responsive Design", "Payment Gateway Integration", "Security", "Performance Optimization"],
+  "github": "",
+  "live": "http://brand-to-product.com/credits"
   },
   {
-    id: 5,
-    title: "Real Estate SaaS",
-    description: "Multi-tenant SaaS application for property managers and real estate agents.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-    category: "Full Stack",
-    tech: ["Node.js", "Express", "MongoDB", "AWS"],
-    github: "https://github.com",
-    live: "https://demo.com"
+    "id": 5,
+    "title": "Inflera AI Web Application",
+    "description": "Developed a full-stack AI-powered web application with a modern and scalable architecture. Built responsive UI components and complex state management on the frontend, while implementing secure backend APIs, database integrations, and cloud deployments for efficient performance and reliability.",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=800",
+    "category": "Full Stack",
+    "tech": ["React.js", "Redux", "SCSS", "Python", "Flask", "PostgreSQL", "AWS", "Vercel", "Wasabi"],
+    "github": "",
+    "live": "https://app.inflera.ai/"
   }
 ]
 
@@ -100,7 +100,9 @@ export function Projects() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {
+              filteredProjects.length > 0 ? (
+                filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 layout
@@ -120,11 +122,14 @@ export function Projects() {
                         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                      />
                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                        <Button variant="outline" size="icon" className="shadow-lg hover:bg-white/10 border-white/20" asChild>
+                        {
+                          project.github != "" &&
+                          <Button variant="outline" size="icon" className="shadow-lg hover:bg-white/10 border-white/20" asChild>
                             <a href={project.github} target="_blank" rel="noopener noreferrer">
                                 <Github className="h-5 w-5" />
                             </a>
                         </Button>
+                        }
                         <Button variant="outline" size="icon" className="shadow-lg hover:bg-white/10 border-white/20" asChild>
                              <a href={project.live} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="h-5 w-5" />
@@ -159,7 +164,11 @@ export function Projects() {
                    </CardFooter>
                 </Card>
               </motion.div>
-            ))}
+            ))
+              ) : (
+                <h2 className="text-center text-2xl w-[100%] flex justify-center">No Projects</h2>
+              )
+            }
           </AnimatePresence>
         </motion.div>
       </div>

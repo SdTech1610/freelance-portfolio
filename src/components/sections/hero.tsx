@@ -23,8 +23,8 @@ export function Hero() {
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6 border border-primary/20 uppercase tracking-widest leading-none">
             Welcome to SD Tech World
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
-            Building Digital Experiences <br />
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
+            Building Digital Experiences <br className="hidden sm:block" />
             With <span className="text-gradient">Modern Tech</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">

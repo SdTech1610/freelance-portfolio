@@ -11,6 +11,14 @@ import { Button } from "@/components/ui/button"
 const testimonialsData = [
   {
     id: 1,
+    name: "Manuel Pierre Garnier",
+    role: "CEO at Brand-To-Product",
+    content: "I had the pleasure of working with Smit as a freelance software engineer, and I highly recommend him. He is professional, clear in his communication, and always takes the time to explain what will be done so there are no surprises along the way. On brand- to - product.com, Smit was instrumental in implementing the payment system, ensuring accessibility, and making the platform fully responsive.What impressed me most is how carefully he listens to the customer's needs and adapts his approach accordingly.He's also pragmatic and flexible, able to find effective solutions that fit within the available budget without compromising quality.",
+    rating: 5,
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsrbM6xSIpY-Oz0JoGV-tipw9jMvLJjeh8Ew&s"
+  },
+  {
+    id: 2,
     name: "Alex Johnson",
     role: "CEO at TechStream",
     content: "Smit delivered our platform ahead of schedule with exceptional quality. His expertise in Next.js and frontend performance is top-notch.",
@@ -18,7 +26,7 @@ const testimonialsData = [
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
   },
   {
-    id: 2,
+    id: 3,
     name: "Sarah Miller",
     role: "Founder of GreenLabs",
     content: "Working with Smit was a breeze. He translated our complex requirements into a simple, beautiful interface. Highly recommended!",
@@ -26,7 +34,7 @@ const testimonialsData = [
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200"
   },
   {
-    id: 3,
+    id: 4,
     name: "David Chen",
     role: "Head of Engineering at CloudScale",
     content: "Excellent communication and technical skills. He helped us migrate our legacy backend to a modern Node.js architecture seamlessly.",
@@ -42,7 +50,7 @@ export function Testimonials() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length)
 
   return (
-    <SectionReveal id="testimonials" className="bg-background relative">
+    <SectionReveal id="testimonials" className="bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

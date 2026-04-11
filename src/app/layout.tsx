@@ -85,12 +85,12 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Smit Doshi",
-    "url": process.env.BASE_URL || "https://sdtech.world",
+    "url": process.env.BASE_URL || "https://freelance.sdtechworld.in",
     "jobTitle": "Full Stack Developer & Freelancer",
     "sameAs": [
-      "https://github.com/smit",
-      "https://linkedin.com/in/smit",
-      "https://twitter.com/smit"
+      "https://github.com/SdTech1610",
+      "https://www.linkedin.com/in/smit-doshi-9990b020b/",
+      "https://x.com/smi_t1610"
     ],
     "description": "Senior Full Stack Developer specializing in Next.js, TypeScript, and high-performance web applications."
   };
@@ -98,6 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preload" as="image" href="/logo.png"/>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <meta name="google-site-verification" content="H--DFpR3lw7lYr7p2p3-owXffs5AX5BSr0euVAzEj_E" />
         <script
